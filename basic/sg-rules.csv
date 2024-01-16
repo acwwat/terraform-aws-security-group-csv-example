@@ -1,0 +1,7 @@
+resource_name,type,name,description,cidr_ipv4,cidr_ipv6,prefix_list_id,referenced_security_group_id,ip_protocol,from_port,to_port
+db,ingress,postgres-web,Allow MySQL access from the private (web) subnet CIDRs,10.0.1.0/24,,,,tcp,3306,3306
+db,egress,all,Allow all outgoing traffic,0.0.0.0/0,,,,-1,-1,-1
+web,ingress,http-public,Allow HTTP access from the public subnet CIDRs,10.0.0.0/24,,,,tcp,80,80
+web,egress,all,Allow all outgoing traffic,0.0.0.0/0,,,,-1,-1,-1
+alb,ingress,https-all,Allow HTTPS access from the the internet,0.0.0.0/0,,,,tcp,443,443
+alb,egress,all,Allow all outgoing traffic,0.0.0.0/0,,,,-1,-1,-1
